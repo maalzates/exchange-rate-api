@@ -29,5 +29,9 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'exchange_api' => [
+        'base_url' => env('EXCHANGE_API_BASE_URL', 'https://api.example.com'),
+        'app_key' => env('EXCHANGE_API_APP_KEY'),
+    ],
 
 ];
