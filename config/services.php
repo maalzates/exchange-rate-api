@@ -30,8 +30,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
     'exchange_api' => [
-        'base_url' => env('EXCHANGE_API_BASE_URL', 'https://api.example.com'),
-        'app_key' => env('EXCHANGE_API_APP_KEY'),
+        'base_url' => env('EXCHANGE_API_BASE_URL', 'https://openexchangerates.org/api/'),
+        'api_key' => env('EXCHANGE_API_APP_KEY', ''),
     ],
 
 ];
