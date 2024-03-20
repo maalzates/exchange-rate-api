@@ -17,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Getting rates route
-Route::get('/rates', [ExchangeRateController::class, 'index'])->name('rates.index');
+Route::get('/rates', [ExchangeRateController::class, 'index'])->name('rates.index')->middleware('log.access');
 
 Route::get('/access-logs', [AccessLogController::class, 'index'])->name('logs.index');
