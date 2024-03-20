@@ -16,6 +16,7 @@ class ExchangeRateService {
 
     public function getRates()
     {
+        // Using our baseUrl gotten in the construct and passing the apiKey as app_id parameter for fetching data. 
         $response = Http::get("{$this->baseUrl}/latest.json", [
             'app_id' => $this->apiKey,
         ]);
@@ -23,8 +24,7 @@ class ExchangeRateService {
         if ($response->successful()) {
             return $response->json();
         }
-    
-        // Handle error or throw an exception
+
         throw new \Exception('Failed to retrieve exchange rates.');
     }
 }
