@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AccessLogController;
 use App\Http\Controllers\Api\ExchangeRateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -17,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 
 // Getting rates route
 Route::get('/rates', [ExchangeRateController::class, 'index'])->name('rates.index');
+
+Route::get('/access-logs', [AccessLogController::class, 'index'])->name('logs.index');
