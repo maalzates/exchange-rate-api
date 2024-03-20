@@ -31,7 +31,7 @@ return [
     ],
     'exchange_api' => [
         'base_url' => env('EXCHANGE_API_BASE_URL', 'https://openexchangerates.org/api/'),
-        'api_key' => env('EXCHANGE_API_APP_KEY', ''),
+        'api_key' => env('EXCHANGE_API_KEY', ''),
     ],
 
 ];
