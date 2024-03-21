@@ -1,64 +1,124 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Exchange Rates API Documentation
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project is an API designed to provide current exchange rate information and log access requests. It integrates with the Open Exchange Rates API to fetch current exchange rates and logs each access request with details such as the timestamp and IP address. This documentation is intended for developers looking to understand or use the API, providing all necessary steps from setup to deployment.
 
-## About Laravel
+## Table of Contents
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [About The Project](#about-the-project)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [API Reference](#api-reference)
+  - [Endpoints](#endpoints)
+    - [Get Current Exchange Rates](#get-current-exchange-rates)
+    - [Get Access Logs](#get-access-logs)
+- [Environment Variables](#environment-variables)
+- [FAQ](#faq)
+- [Authors and Acknowledgment](#authors-and-acknowledgment)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## About The Project
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+This API leverages Laravel 8 to provide real-time exchange rate information and to log access requests for monitoring and analysis. It's designed for use in financial applications, analytics tools, or any software requiring currency conversion features. The API does not require authentication, making it easily accessible for public use.
 
-## Learning Laravel
+## Getting Started
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Prerequisites
 
-## Laravel Sponsors
+- PHP 7.4 or higher
+- Composer
+- Laravel 8
+- XAMPP (or equivalent server stack that supports PHP and MySQL)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Installation
 
-### Premium Partners
+1. **Clone the repository:**
+   ```
+   git clone https://yourproject/repository.git
+   ```
+   
+2. **Navigate to the project directory:**
+   ```
+   cd yourproject
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+3. **Install dependencies with Composer:**
+   ```
+   composer install
+   ```
 
-## Contributing
+4. **Copy the example env file and make the required configuration changes in the .env file:**
+   ```
+   cp .env.example .env
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. **Generate a new application key:**
+   ```
+   php artisan key:generate
+   ```
 
-## Code of Conduct
+6. **Run the migrations to create the database schema:**
+   ```
+   php artisan migrate
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+7. **Start the server using XAMPP or Laravel's built-in server:**
+   ```
+   php artisan serve
+   ```
+   or start your XAMPP server and navigate to the project's public directory.
 
-## Security Vulnerabilities
+## Usage
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+After installation, the API can be consumed to fetch exchange rates and access log entries.
+The base of the endpoint is this: /api/v1/
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## API Reference
+
+### Endpoints
+
+#### Get Current Exchange Rates
+
+- **GET /rates**
+  - Fetches the current exchange rates.
+  - No parameters required.
+
+#### Get Access Logs
+
+- **GET /access-logs**
+  - Retrieves access log entries. Optionally filter by start and end date.
+  - Query parameters:
+    - `start_date`: The beginning of the date range (format: YYYY-MM-DD).
+    - `end_date`: The end of the date range (format: YYYY-MM-DD).
+    
+Here is an example: localhost:800/api/v1/access-logs?start_date=2024-01-01&end_date=2024-01-31
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system.
+
+## Environment Variables
+
+- `DB_CONNECTION`: Your database connection type.
+- `DB_DATABASE`: Your database name.
+- `DB_USERNAME`: Your database username.
+- `DB_PASSWORD`: Your database password.
+- `OPEN_EXCHANGE_RATES_API_KEY`: Your API key for Open Exchange Rates.
+
+## Security
+
+Since this is a public API, ensure all endpoints are protected against common vulnerabilities. Use Laravel's built-in features like rate limiting to safeguard the API.
+
+## FAQ
+
+Q: Do I need an API key to use this service?
+A: You don't need any api key to make requests to this API as it's public. However, for installation, you need to get your own APP_ID from the https://openexchangerates.org/ site itself. 
+
+## Authors and Acknowledgment
+
+- **Your Name** - *Initial work* - [Manuel Alzate](https://github.com/maalzates)
+
+Thank contributors and other authors.
