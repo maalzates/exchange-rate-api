@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AccessLogRequest;
 use App\Models\AccessLog;
 use Illuminate\Http\Request;
 
 class AccessLogController extends Controller
 {
-    public function index(Request $request) {
+    public function index(AccessLogRequest $request) {
 
         // Retrieve query parameters
         $startDate = $request->query('start_date');
