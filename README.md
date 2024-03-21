@@ -107,6 +107,7 @@ Add additional notes about how to deploy this on a live system.
 - `DB_USERNAME`: Your database username.
 - `DB_PASSWORD`: Your database password.
 - `OPEN_EXCHANGE_RATES_API_KEY`: Your API key for Open Exchange Rates.
+- `EXCHANGE_BASE_URL`: https://openexchangerates.org/api/
 
 ## Security
 
