@@ -120,6 +120,6 @@ A: You don't need any api key to make requests to this API as it's public. Howev
 
 ## Authors and Acknowledgment
 
-- **Your Name** - *Initial work* - [Manuel Alzate](https://github.com/maalzates)
+- **Manuel Alzate** - *Initial work* - [Manuel Alzate](https://github.com/maalzates)
 
 Thank contributors and other authors.
