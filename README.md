@@ -94,7 +94,7 @@ The base of the endpoint is this: /api/v1/
     - `start_date`: The beginning of the date range (format: YYYY-MM-DD).
     - `end_date`: The end of the date range (format: YYYY-MM-DD).
     
-Here is an example: localhost:800/api/v1/access-logs?start_date=2024-01-01&end_date=2024-01-31
+Here is an example: localhost/api/v1/access-logs?start_date=2024-01-01&end_date=2024-01-31
 
 ## Deployment
 
