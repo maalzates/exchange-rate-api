@@ -59,9 +59,9 @@ These instructions will get you a copy of the project up and running on your loc
    php artisan key:generate
    ```
 
-6. **Run the migrations to create the database schema:**
+6. **Run the migrations to create the database schema and add the --seed flag to fill with fake data:** 
    ```
-   php artisan migrate
+   php artisan migrate --seed
    ```
 
 7. **Start the server using XAMPP or Laravel's built-in server:**
